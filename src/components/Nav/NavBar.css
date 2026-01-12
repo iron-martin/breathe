@@ -1,0 +1,122 @@
+/* NavBar.css */
+
+#navbar {
+  width: 100vw;
+  display: flex;
+  padding: 0;
+  height: 95px;
+  background-color: #121212;
+}
+
+.menu {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: url(../../assets/img/martinFierro.jpg);
+}
+
+.logo-img {
+  width: 4rem;
+  height: 3.4rem;
+  object-fit: contain;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-items {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-link {
+  color: #f8f9fa !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem !important;
+}
+
+.navbar-link.active {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.navbar-link:hover {
+  box-shadow: 0 4px 6px#f8f9fa2c;
+  transition: all 0.15s ease-in-out;
+}
+
+.scrolled {
+  background-color: rgba(33, 37, 41, 0.95) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.7s ease-in;
+}
+
+/* Estilos para el toggle en móviles */
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .navbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-items {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .navbar-collapse {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .navbar-link {
+    margin: 5px 0;
+    padding: 10px !important;
+    width: 100%;
+  }
+
+  .logo {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 993px) {
+  .nav-items {
+    display: flex !important;
+  }
+}

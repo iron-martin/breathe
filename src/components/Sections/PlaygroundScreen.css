@@ -1,0 +1,351 @@
+
+.playground-screen {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
+  padding: 40px 20px;
+}
+
+.playground-content {
+  margin-top: 95px;
+}
+
+.playground-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1600');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px) brightness(0.6) sepia(0.3);
+  z-index: 1;
+  opacity: 0.8;
+}
+.playground-element {
+  position: absolute;
+  z-index: 2;
+  opacity: 0.2;
+}
+
+.swing {
+  width: 80px;
+  height: 200px;
+  background: linear-gradient(45deg, #8B4513, #A0522D);
+  clip-path: polygon(40% 0%, 60% 0%, 65% 100%, 35% 100%);
+  top: 20%;
+  left: 10%;
+  animation: swing 6s infinite ease-in-out;
+}
+
+.slide {
+  width: 150px;
+  height: 300px;
+  background: linear-gradient(45deg, #4169E1, #6495ED);
+  clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
+  top: 40%;
+  right: 15%;
+  animation: slideGlow 8s infinite alternate;
+}
+
+.seesaw {
+  width: 200px;
+  height: 20px;
+  background: linear-gradient(45deg, #FF6347, #FF7F50);
+  top: 70%;
+  left: 30%;
+  border-radius: 10px;
+  animation: seesaw 4s infinite alternate;
+}
+
+@keyframes swing {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+}
+
+@keyframes slideGlow {
+  0% { opacity: 0.1; }
+  100% { opacity: 0.3; }
+}
+
+@keyframes seesaw {
+  0% { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
+}
+
+.playground-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 30px;
+  padding: 60px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.playground-header {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #FFD700, #FF6347, #4169E1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 300% auto;
+  animation: playgroundTitle 5s ease-in-out infinite alternate;
+}
+
+@keyframes playgroundTitle {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.section-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.playground-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.playground-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 40px 30px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.playground-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent-color);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(var(--accent-rgb), 0.3);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.card-header {
+  margin-bottom: 25px;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.card-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.card-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.link-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.link-underline {
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-color), transparent);
+  transition: width 0.4s ease;
+}
+
+.playground-card:hover .link-underline {
+  width: 100%;
+}
+
+.playground-card:hover .link-text {
+  letter-spacing: 2px;
+}
+
+.card-hover-effect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.7s ease;
+}
+
+.playground-card:hover .card-hover-effect {
+  left: 100%;
+}
+
+.playground-footer {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.footer-line {
+  width: 150px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #FFD700, #FF6347, #4169E1, transparent);
+  margin: 0 auto;
+  border-radius: 3px;
+  animation: footerLine 3s infinite alternate;
+}
+
+@keyframes footerLine {
+  0% {
+    width: 150px;
+  }
+  100% {
+    width: 250px;
+  }
+}
+
+.playground-card:nth-child(1):hover {
+  --accent-rgb: 52, 152, 219;
+}
+
+.playground-card:nth-child(2):hover {
+  --accent-rgb: 46, 204, 113;
+}
+
+.playground-card:nth-child(3):hover {
+  --accent-rgb: 155, 89, 182;
+}
+@media (max-width: 992px) {
+  .playground-content {
+    padding: 40px 30px;
+  }
+  
+  .section-title {
+    font-size: 2.8rem;
+  }
+  
+  .playground-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .playground-screen {
+    padding: 20px 15px;
+  }
+  
+  .playground-content {
+    padding: 30px 20px;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .playground-card {
+    padding: 30px 20px;
+  }
+  
+  .card-title {
+    font-size: 1.8rem;
+  }
+  
+  .swing, .slide, .seesaw {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  
+  .playground-card {
+    padding: 25px 15px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+  }
+  
+  .card-description {
+    font-size: 0.95rem;
+  }
+}
