@@ -28,6 +28,7 @@ export const TitleScreen = () => {
           <button 
             className="play-btn" 
             onClick={handlePlayClick}
+            title='This will someday take you to the download page.'
           >
             <span className="btn-text">Play</span>
             <span className="btn-icon">▲</span>
@@ -36,6 +37,7 @@ export const TitleScreen = () => {
           <button 
             className="media-btn" 
             onClick={handleTitleOptionClick}
+            title='This will someday take you to the trailer.'
           >
             <span className="btn-text">Watch</span>
             <span className="btn-icon">▶</span>
@@ -44,6 +46,7 @@ export const TitleScreen = () => {
           <button 
             className="media-btn" 
             onClick={handleTitleOptionClick}
+            title='This will someday take you to the library.'
           >
             <span className="btn-text">Read</span>
             <span className="btn-icon">▶</span>

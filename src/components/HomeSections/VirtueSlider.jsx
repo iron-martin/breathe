@@ -67,54 +67,51 @@ export const VirtueSlider = () => {
   };
 
   return (
-    <div className="virtue-slider mt-0">
-      <div className="slider-container row">
-        {/* Columna izquierda - Información */}
-        <div className="definition-column col-7">
-          <div className="virtue-header">
-            <h2 className="virtue-name" style={{ color: currentColor }}>
-              {currentVirtue.name}
-            </h2>
-            <span
-              className="virtue-latin"
-              style={{ color: currentColor }}
-            >
-              {currentVirtue.latin}
-            </span>
-          </div>
-
-          <div className="definition-content">
-            <p className="definition-text">{currentVirtue.definition}</p>
-
-            {/* Navegación del slider */}
-            <div className="slider-navigation">
-              <button className="nav-btn prev-btn" onClick={prevSlide}>
-                ←
-              </button>
-
-              <div className="slide-dots">
-                {virtuesData.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`dot ${index === currentSlide ? 'active' : ''}`}
-                    onClick={() => goToSlide(index)}
-                    style={{
-                      backgroundColor: index === currentSlide ? currentColor : '#ccc'
-                    }}
-                  />
-                ))}
-              </div>
-
-              <button className="nav-btn next-btn" onClick={nextSlide}>
-                →
-              </button>
-            </div>
-          </div>
-
+  <div className="virtue-slider mt-0">
+    <div className="slider-container">
+      {/* Columna izquierda - Información */}
+      <div className="definition-column col-7 m-0">
+        <div className="virtue-header">
+          <h2 className="virtue-name" style={{ color: currentColor }}>
+            {currentVirtue.name}
+          </h2>
+          <span
+            className="virtue-latin"
+            style={{ color: currentColor }}
+          >
+            {currentVirtue.latin}
+          </span>
         </div>
 
+        <div className="definition-content">
+          <p className="definition-text">{currentVirtue.definition}</p>
 
+          {/* Navegación del slider */}
+          <div className="slider-navigation">
+            <button className="nav-btn prev-btn" onClick={prevSlide}>
+              ←
+            </button>
+
+            <div className="slide-dots">
+              {virtuesData.map((_, index) => (
+                <button
+                  key={index}
+                  className={`dot ${index === currentSlide ? 'active' : ''}`}
+                  onClick={() => goToSlide(index)}
+                  style={{
+                    backgroundColor: index === currentSlide ? currentColor : '#ccc'
+                  }}
+                />
+              ))}
+            </div>
+
+            <button className="nav-btn next-btn" onClick={nextSlide}>
+              →
+            </button>
+          </div>
+        </div>
       </div>
+
       {/* Columna derecha - Imagen nítida */}
       <div className="image-column col-5">
         <div className="virtue-image-container">
@@ -125,9 +122,9 @@ export const VirtueSlider = () => {
               className="virtue-image-img"
             />
           </div>
-
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 };
